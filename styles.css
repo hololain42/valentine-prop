@@ -1,0 +1,294 @@
+/* ===== STYLE BASE ===== */
+body {
+    font-family: "Lobster", cursive;
+    background-color: #ffdde1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: url("images/image.jpg") repeat;
+    font-size: 35px;
+    color: rgb(255, 0, 174);
+    overflow: hidden;
+    padding: 16px;
+}
+
+/* ===== CONFETTI CANVAS ===== */
+#confettiCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main-prompt {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.3);
+    width: min(720px, 92vw);
+    height: 80vh;
+    max-height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===== TEXTS ===== */
+.title {
+    -webkit-text-stroke: 2px #71004f;
+    font-weight: 900;
+    font-size: clamp(32px, 5vw, 60px);
+    margin: 15px 0 10px 0;
+}
+
+.question {
+    -webkit-text-stroke: 2px #71004f;
+    font-size: clamp(28px, 4vw, 50px);
+    font-style: oblique;
+    font-weight: 800;
+    margin: 10px 0 15px 0;
+}
+
+/* ===== MAIN IMAGE ===== */
+.image {
+    max-width: 90%;
+    height: auto;
+    max-height: 280px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(0 10px 14px rgba(0,0,0,.12));
+    margin: 15px 0;
+}
+
+/* ===== BUTTON AREA ===== */
+.button-zone {
+    position: relative;
+    width: min(520px, 100%);
+    height: 150px;
+    margin: 20px auto;
+    touch-action: none;
+}
+
+/* ===== BUTTONS ===== */
+.button-zone button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ff4d79;
+    color: #fff;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 999px;
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 800;
+    cursor: pointer;
+    font-family: "Lobster", cursive;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.12s ease, background 0.12s ease;
+    z-index: 10;
+}
+
+.button-zone button:hover {
+    background-color: #ff1f68;
+}
+
+#yesButton {
+    left: 18%;
+    background: linear-gradient(135deg, #ff3b7a 0%, #ff1f68 100%);
+}
+
+#noButton {
+    left: 62%;
+    background: #e5e7eb;
+    color: #111827;
+}
+
+#noButton:hover {
+    background: #d1d5db;
+}
+
+#secondChanceButton {
+    position: static;
+    display: block;
+    margin: 10px auto 15px auto;
+    transform: none;
+    background: linear-gradient(135deg, #ff3b7a 0%, #ff1f68 100%);
+    color: #fff;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 999px;
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 800;
+    cursor: pointer;
+    font-family: "Lobster", cursive;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+    transition: transform 0.12s ease, background 0.12s ease;
+}
+
+#secondChanceButton:hover {
+    background-color: #ff1f68;
+}
+
+/* ===== HINT ===== */
+.hint {
+    margin-top: 10px;
+    font-size: clamp(14px, 2vw, 18px);
+    opacity: 0.7;
+    font-style: italic;
+    -webkit-text-stroke: 0;
+}
+
+/* ===== RESULT ===== */
+.result {
+    display: none;
+    margin-top: 30px;
+    animation: pop 0.35s ease;
+}
+
+.result h2 {
+    font-size: clamp(36px, 5vw, 56px);
+    margin: 10px 0;
+    -webkit-text-stroke: 2px #71004f;
+}
+
+.result p {
+    font-size: clamp(20px, 3vw, 32px);
+    -webkit-text-stroke: 1px #71004f;
+    font-style: normal;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.96);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ===== YOUTUBE PLAYER (HIDDEN) ===== */
+#youtube-player-container {
+    position: fixed;
+    top: -9999px;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#youtube-player {
+    width: 100%;
+    height: 100%;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .main-prompt {
+        padding: 30px 20px;
+        height: 80vh;
+    }
+
+    .button-zone {
+        height: 120px;
+    }
+
+    .button-zone button {
+        padding: 12px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-prompt {
+        padding: 25px 15px;
+        height: 80vh;
+    }
+    
+    .button-zone button {
+        padding: 10px 20px;
+    }
+}
+
+/* ===== HEARTS DECORATION ===== */
+.hearts-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart-left,
+.heart-right {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+    opacity: 0; 
+    transition: opacity 0.5s ease;
+}
+
+.heart-left.visible,
+.heart-right.visible {
+    opacity: 1;
+}
+
+.heart-left {
+    top: 15%;
+    left: 5%;
+    transform: translateY(0) rotate(-10deg);
+    animation: floatLeft 3s ease-in-out infinite;
+}
+
+.heart-right {
+    top: 15%;
+    right: 5%;
+    transform: translateY(0) rotate(10deg);
+    animation: floatRight 3.2s ease-in-out infinite;
+}
+
+@keyframes floatLeft {
+    0%, 100% { transform: translateY(0) rotate(-10deg); }
+    50% { transform: translateY(-15px) rotate(-5deg); }
+}
+
+@keyframes floatRight {
+    0%, 100% { transform: translateY(0) rotate(10deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .heart-left, .heart-right { width: 90px; height: 90px; top: 2%; }
+}
+@media (max-width: 480px) {
+    .heart-left, .heart-right { width: 70px; height: 70px; top: 2%; }
+    .heart-left { left: 2%; }
+    .heart-right { right: 2%; }
+}

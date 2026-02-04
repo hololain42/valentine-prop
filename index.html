@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>¿Quieres ser mi San Valentín?</title>
+    
+    <!-- Confetti library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <!-- Confetti canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <div class="container">
+        <div class="main-prompt">
+            <img class="image" id="mainImage" src="images/catflower.jpg" alt="Imagen principal">
+            <h1 class="title" id="name">¡Hola Julia!</h1>
+            <p class="question" id="question">¿Quieres ser mi San Valentín?</p>
+            
+            <div class="button-zone" id="buttonZone">
+                <button id="noButton">No</button>
+                <button id="yesButton">Sí</button>
+            </div>
+
+            <!-- Hint message -->
+            <div class="hint" id="hint">El "No" parece un poco tímido 😈</div>
+
+            <!-- Hidden container for Youtube player -->
+            <div id="youtube-player-container">
+                <div id="youtube-player"></div>
+            </div>
+
+            <!-- Result when Yes is pressed -->
+            <div class="result" id="result">
+                <div class="hearts-container">
+                    <img src="images/heart1.png" alt="Heart 1" class="heart-left">
+                    <img src="images/heart2.png" alt="Heart 2" class="heart-right">
+                </div>
+                <h2>¡SÍIII! 🎉</h2>
+                <p>¡Nos vemos el 14 bebé!</p>
+            </div>
+
+            <button id="secondChanceButton" style="display: none;">Espera, cambié de opinión...</button>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
