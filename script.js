@@ -188,10 +188,7 @@ function cheeringYes() {
         result.style.display = "block";
 
         // Add heart photos
-        const hl = document.querySelector('.heart-left');
-        const hr = document.querySelector('.heart-right');
-        if(hl) hl.classList.add('visible');
-        if(hr) hr.classList.add('visible');
+        document.querySelector('.hearts-container').style.display = 'block';
 
         // Play cheering sound
         const cheerAudio = document.createElement("audio");

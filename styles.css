@@ -240,7 +240,7 @@ body {
     top: 0;
     left: 0;
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
 }
 
 .heart-left,
@@ -250,13 +250,6 @@ body {
     height: 240px;
     object-fit: cover;
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
-    opacity: 0; 
-    transition: opacity 0.5s ease;
-}
-
-.heart-left.visible,
-.heart-right.visible {
-    opacity: 1;
 }
 
 .heart-left {
@@ -281,6 +274,20 @@ body {
 @keyframes floatRight {
     0%, 100% { transform: translateY(0) rotate(10deg); }
     50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+.result {
+    display: none;
+    margin-top: 30px;
+    animation: pop 0.35s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.result h2,
+.result p {
+    position: relative;
+    z-index: 2;
 }
 
 /* Responsive */
