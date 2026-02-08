@@ -56,7 +56,7 @@ body {
     -webkit-text-stroke: 2px #71004f;
     font-weight: 900;
     font-size: clamp(32px, 5vw, 60px);
-    margin: 15px 0 10px 0;
+    margin: 10px 0;
 }
 
 .question {
@@ -64,7 +64,7 @@ body {
     font-size: clamp(28px, 4vw, 50px);
     font-style: oblique;
     font-weight: 800;
-    margin: 10px 0 15px 0;
+    margin: 10px 0;
 }
 
 /* ===== MAIN IMAGE ===== */
@@ -161,13 +161,15 @@ body {
 /* ===== RESULT ===== */
 .result {
     display: none;
-    margin-top: 30px;
+    margin-top: 20px;
     animation: pop 0.35s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .result h2 {
     font-size: clamp(36px, 5vw, 56px);
-    margin: 10px 0;
+    margin: 5px 0;
     -webkit-text-stroke: 2px #71004f;
 }
 
@@ -175,6 +177,7 @@ body {
     font-size: clamp(20px, 3vw, 32px);
     -webkit-text-stroke: 1px #71004f;
     font-style: normal;
+    margin: 5px 0;
 }
 
 @keyframes pop {
@@ -298,4 +301,28 @@ body {
     .heart-left, .heart-right { width: 70px; height: 70px; top: 2%; }
     .heart-left { left: 2%; }
     .heart-right { right: 2%; }
+}
+
+.sambalenta {
+    max-width: 70%;
+    height: auto;
+    max-height: 200px;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,.12));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sambalenta {
+        max-height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sambalenta {
+        max-height: 120px;
+        margin-top: 10px;
+    }
 }
